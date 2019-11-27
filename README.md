@@ -33,45 +33,90 @@ Enfin, redémarrer Apache :
 
     sudo services apache2 restart
 
-## Anatomie du thème Twenty Twenty :  
+# Pour récupérer l'éditeur classique 
 
-    Le thème de base de cette version de WordPress (5.3) est assez bien foutu (Twenty Twenty)
+Chercher dans **plugins** "classic editor" 
 
-    Dans : wp-content/themes/twentytwenty
+# Webpack 
 
-Fichiers principaux : 
+Créer *package.json*
 
-    404.php
-    comments.php
-    footer.php
-    functions.php
-    header.php
-    index.php
-    screenshoot.png
-    searchform.php
-    singular.php
-    style-rtl.css
-    style.css
+    {
+        "private": true,
+        "scripts": {
+            "dev": "npm run development",
+            "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+            "watch": "npm run development -- --watch",
+            "watch-poll": "npm run watch -- --watch-poll",
+            "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+            "prod": "npm run production",
+            "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        },
+        "devDependencies": {
+            "axios": "^0.19",
+            "cross-env": "^5.1",
+            "laravel-mix": "^4.0.7",
+            "lodash": "^4.17.13",
+            "resolve-url-loader": "^2.3.1",
+            "sass": "^1.15.2",
+            "sass-loader": "^7.1.0"
+        }
+    }
 
-On a un dossier **assets** avec notamment : 
+Et webpack.mix.js 
 
-    fonts/inter/inter-italic-var.woff2
-    fonts/inter/inter-upright-var.woff2
+    const mix = require('laravel-mix');
 
-On a un dossier **template-parts** qui contient : 
+    /*
+    |--------------------------------------------------------------------------
+    | Mix Asset Management
+    |--------------------------------------------------------------------------
+    |
+    | Mix provides a clean, fluent API for defining some Webpack build steps
+    | for your Laravel application. By default, we are compiling the Sass
+    | file for the application as well as bundling up all the JS files.
+    |
+    */
 
-    content-cover.php
-    content.php
-    entry-author-bio.php
-    entry-header.php
-    featured-image.php
-    footer-menus-widgets.php
-    modal-menu.php
-    modal-search.php
-    navigation.php
-    pagination.php
+    mix.js('src/app.js', './')
+        .sass('src/app.scss', './');
 
-Et il y a un fichier readme.txt qui contient quelques indications. 
+Créer : 
+    
+    src/app.js 
+    src/app.scss
+
+Installer les dépendances : 
+
+    npm install 
+
+Lancer webpack : 
+
+    npm run watch
+
+Pour compiler : 
+
+    npm run prod
+
+# Materialize 
+
+Sur : 
+
+    https://materializecss.com/getting-started.html
+
+Choisir sass, télécharger et dézipper dans *src*, pour pouvoir utiliser la version sass de materialize.
+
+Dans app.scss, faire : 
+
+    @import './materialize/sass/materialize.scss';
+
+materialize.scss importe des composants scss d'un sous dossier. 
+
+Rien de nous empeche de faire par exemple : 
+
+    @import './materialize/sass/materialize.scss';
+
+Avec nos propres imports pour ne prendre que ce dont on a besoin.
 
 # À suivre 
 
