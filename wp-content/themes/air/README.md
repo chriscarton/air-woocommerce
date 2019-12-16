@@ -56,7 +56,7 @@ Créer un dossier dans wp-content/themes
 
 Par exemple : 
 
-    **air-theme**
+    air
 
 Dans ce dossier, on peut y placer un *screenshot.png*
 
@@ -97,7 +97,7 @@ single.php
 archive.php
 404.php
 
-# Settings 
+## Settings 
 
 Créer une page *Homepage*
 
@@ -106,3 +106,59 @@ Dans *Réglages, lecture*, changer **"La page d'accueil affiche"**
     Une page statique. 
 
 Et choisir *Homepage*
+
+## Pour les images (en dur)
+
+    <?php bloginfo('template_directory');?>
+    <img src="<?php bloginfo('template_directory');?>/images/logo.png">
+
+## Theme Support 
+
+Dans *functions.php*
+
+    add_theme_support('menus');
+
+## Utiliser des menus 
+    
+Pour déclarer un menu, dans *functions.php*
+
+    register_nav_menus([
+        'top-menu'=>'Top Menu'
+    ]);
+
+Pour utiliser ce menu dans le theme : 
+
+<?php 
+    wp_nav_menu([
+        'theme_location'=>'top-menu'
+    ]);
+?>
+
+Il existe un plugin 
+
+    Force Regenerate Thumbnails
+
+
+## Wordpress Basic Loop : 
+
+    if ( have_posts() ) : 
+        while ( have_posts() ) : the_post(); 
+            the_content();
+            //ou bien : 
+            /*
+                the_title( '<h2>', '</h2>' ); 
+                the_post_thumbnail(); 
+                the_excerpt();
+            */
+        endwhile; 
+    endif;
+
+Voir pour des exemples plus détaillés : 
+
+    https://developer.wordpress.org/themes/basics/the-loop/
+
+# WP Queries 
+
+Using wp_reset_query() restores the WP_Query and global $post data to the original main query. You MUST use this function to reset your loop if you use query_posts() within your loop. You can use it after custom loops with WP_Query because it actually calls wp_reset_postdata() when it runs. However, it’s best practice to use wp_reset_postdata() with any custom loops involving WP_Query.
+
+<?php wp_reset_query(); ?>

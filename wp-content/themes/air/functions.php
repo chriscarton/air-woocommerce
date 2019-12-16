@@ -37,4 +37,18 @@
 
     add_action('wp_enqueue_script','load_javascript');
 
+
+
+    add_theme_support('menus');
+
+    register_nav_menus([
+        'top-menu'=>'Top Menu'
+    ]);
+
+    add_theme_support('post-thumbnails');
+
+    //Add image sizes
+    add_image_size('post_image',1100,750,false);
+
+
 ?>

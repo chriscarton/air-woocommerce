@@ -9,3 +9,14 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('air-theme'); ?>>
+
+
+
+<header id="Header">
+    <img src="<?php bloginfo('template_directory');?>/images/temporary_logo.jpg">
+    <?php 
+        wp_nav_menu([
+            'theme_location'=>'top-menu'
+        ]);
+    ?>
+</header>
