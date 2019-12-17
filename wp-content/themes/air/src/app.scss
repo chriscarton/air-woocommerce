@@ -61,7 +61,11 @@ body{
     @import 'post.scss';
     @import 'pagination.scss';
     @import 'category.scss';
+
+    //Est-ce que je devrais pas faire un fichier forms.scss ? 
+    @import 'forms.scss';
     @import 'comments.scss';
+    @import 'search.scss';
 
     #Categories{
         background-color:#e2e2e2;

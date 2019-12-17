@@ -200,6 +200,31 @@ body .category-template-header .the_category ul li a:hover {
   text-decoration: underline;
 }
 
+body form input,
+body form textarea {
+  display: block;
+  min-height: 35px;
+  padding: 3px;
+  border: 0px;
+}
+
+body form label {
+  font-weight: bold;
+}
+
+body form input[type=checkbox] {
+  display: inline;
+  min-height: auto;
+}
+
+body form input[type=submit] {
+  background-color: black;
+  padding: 15px;
+  color: white;
+  border: 0px;
+  font-family: monospace;
+}
+
 body .comments {
   margin-top: 75px;
   background-color: #68c8ff;
@@ -210,31 +235,6 @@ body .comments .comment-respond {
   color: white;
   background-color: #0093e8;
   padding: 15px;
-}
-
-body .comments .comment-respond input,
-body .comments .comment-respond textarea {
-  display: block;
-  min-height: 35px;
-  padding: 3px;
-  border: 0px;
-}
-
-body .comments .comment-respond label {
-  font-weight: bold;
-}
-
-body .comments .comment-respond input[type=checkbox] {
-  display: inline;
-  min-height: auto;
-}
-
-body .comments .comment-respond input[type=submit] {
-  background-color: black;
-  padding: 15px;
-  color: white;
-  border: 0px;
-  font-family: monospace;
 }
 
 body .comments .single-comment {
@@ -251,6 +251,62 @@ body .comments .single-comment .single-comment-infos {
   font-size: 0.9rem;
   text-align: right;
   font-style: italic;
+}
+
+body .search-form {
+  background-color: #bbb7df;
+  padding: 75px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+body #searchResultsCount {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  width: 50%;
+  margin-right: 0px;
+  margin-left: auto;
+  background-color: white;
+  border-radius: 50px;
+  text-align: right;
+  box-shadow: 5px 3px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+body .lead {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+body #searchResults {
+  background-color: #dcdaef;
+  padding: 75px;
+}
+
+body #searchResults .single-search-result {
+  padding: 25px;
+  box-shadow: 5px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  margin-top: 25px;
+}
+
+body #searchResults .single-search-result .single-search-result-functions {
+  text-align: right;
+}
+
+body #searchResults .single-search-result .single-search-result-functions a.single-search-result-btn {
+  font-size: 0.8rem;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+  display: inline-block;
+  font-family: monospace;
+  text-decoration: none;
 }
 
 body #Categories {
