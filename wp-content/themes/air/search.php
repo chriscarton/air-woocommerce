@@ -55,9 +55,16 @@ Template Name: Search Page
 
                 //ah bon j'ai pas 20 lignes c'est que je dois avoir une pagination ? Oh yeah.
 
+            set_query_var( 'query', $wp_query);
+            get_template_part('parts/pagination');
+
             ?>
 
         </div>
+
+        
+
+
     </div>
 
 <?php get_footer(); ?>

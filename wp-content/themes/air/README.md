@@ -251,3 +251,72 @@ Oh, je sais qu'on va y venir.
     https://www.wpcrafter.com/make-wordpress-theme-compatible-elementor/
 
 Bon voilà c'est une vidéo à regarder *"How To Make Any WordPress Theme Compatible With Elementor"*. 
+
+# Créer une page de recherche
+
+Creer *search.php* et *searchform.php* (à la racine du thème). 
+
+*searchform.php* est un bête formulaire : 
+
+    <form method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+        <div>
+            <label>Rechercher : </label>
+            <input 
+                type="search" 
+                class="search-field" 
+                placeholder="Votre recherche" 
+                value="" 
+                name="s" 
+                title="Votre recherche" 
+            />
+            <input type="submit" class="search-submit" value="C'est parti" />
+        </div>
+    </form>
+
+C'est *search.php* qui est spécial. Déjà c'est une *template page* : 
+
+    <?php
+    /*
+    Template Name: Search Page
+    */
+    ?>
+
+Ça signifie que pour que le tout fonctionne, il faut se rendre dans l'admin, et créer une page *Search* avec le slug *search-page*. Il faut par ailleurs lui attribuer le **modèle de page Search Page**. 
+
+Pour traiter les données : 
+
+    //On récupère une requête globale :
+    global $wp_query;
+
+    //Ça c'est le nombre de résultats
+    $total_results = $wp_query->found_posts;
+
+    //Mais pour avoir les résultats eux-même, on utilise une boucle avec $wp_query : 
+    if($wp_query->have_posts()):
+        while($wp_query->have_posts()): $wp_query->the_post();
+        ?>
+
+        <?php //ici des choses comme the_title() sont directement accessibles. ?>
+        <?php //Et aussi the_permalink() pour faire les liens vers les résultats ?>
+
+        <?php
+        endwhile;
+    endif;
+
+Petite parenthèse on peut lier directement la page de recherche (n'importe ou) : 
+    
+    <a href="http://localhost/air-woocommerce/search-page/">
+        Loupiote!
+    </a>
+    //Avec le slug ça marche
+
+Il y a une pagination à mettre (parce que ça récupère que 10 résultats)
+Et là on en vient au point suivant : 
+
+# Passer des variables à get_template_part 
+
+Il suffit de faire **ça** :
+
+    set_query_var('query', $wp_query);
+    get_template_part('parts/pagination');
+
