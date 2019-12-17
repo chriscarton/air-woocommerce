@@ -1,7 +1,83 @@
 @import './variables.scss';
-@import './materialize/sass/materialize.scss';
-
 body{
-    // background-color:$darkblue;
-    // color:white;
+    background-color:#c5cae9;
+    margin:0px;
+
+
+    h1,h2,h3,h4,h5,h6{
+        margin:0px;
+        font-family: sans-serif;
+    }
+
+    a{
+        font-family: sans-serif;
+        color:black;
+    }
+
+    #Main{
+        background-color:white;
+        padding:25px;
+        min-height:100vh;
+        box-shadow:5px 5px 10px 0px rgba(0,0,0,0.15);
+        width:75%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    
+
+    header#Banner{
+        display:flex;
+        align-items: center;
+        // justify-content: center;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+
+    .the_category{
+        ul{
+            display:inline;
+            list-style:none;
+            padding:0px;
+            li{
+                display:inline-block;
+                font-size:1rem;
+                a{
+                    color:orange;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+    @import '404.scss';
+    @import 'menu.scss';
+    @import 'post.scss';
+    @import 'pagination.scss';
+    @import 'category.scss';
+
+
+    #Categories{
+        background-color:#e2e2e2;
+        padding:10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-family: monospace;
+        ul li a{
+            font-family: monospace;
+        }
+    }
+
 }
+
+//Il met peut-être beaucoup de temps à compiler ceci à chaque fois...
+//@import './materialize/sass/materialize.scss';
+

@@ -1,23 +1,36 @@
 <?php get_header(); ?>
+<main id="Main">
+    <?php 
+    get_template_part('parts/banner'); 
+    get_template_part('parts/menu');
+    get_template_part('parts/categories-list');
+    ?>
+    <div class="the_page">
+        <?php
+        require_once('QueryBuilder/CartonQueryBuilder.php');
+        $queryBuilder = new CartonQueryBuilder();
+        
+        $queryBuilder->setArgs([
+            'p'=>null,
+            'post_type'=>'post',
+            'post_status'=>'publish',
+        ]);
+        
+        $queryBuilder->buildQuery();
+        $query = $queryBuilder->getQuery();
 
-
-<!-- <div class="row">
-    <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">This is a Materialize test</span>
-            <p>It works.</p>
-        </div>
-        <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div>
-        </div>
+        
+        if ($query->have_posts()) : 
+            while ($query->have_posts() ) : $query->the_post();
+                get_template_part('parts/post');
+            endwhile; 
+            set_query_var('query',$query);
+            get_template_part('parts/pagination'); 
+            
+        else:
+            echo '<p>no posts!</p>';
+        endif;
+        ?>
     </div>
-</div> -->
-
-<?php
-require_once('inc/loop-basic.php'); 
-?>
-
+</main>
 <?php get_footer(); ?>

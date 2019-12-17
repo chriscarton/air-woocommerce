@@ -1,3 +1,25 @@
+# Avant toute chose 
+
+## Lancer NPM 
+
+    //bien se placer dans le dossier du thème
+    npm run watch
+
+## Refresh the page
+
+    CTRL + F5 (de préférence)
+
+## wp-config.php
+
+Définir ces constantes pour **développer** avec plus de **sérénité** : 
+
+    define('WP_DEBUG', true);
+    define('WP_CACHE', false);
+
+## Chrome Dev Tools 
+
+    F12 > Network > Disable Cache
+
 # Anatomie du thème Twenty Twenty :  
 
     Le thème de base de cette version de WordPress (5.3) est assez bien foutu (Twenty Twenty)
@@ -22,6 +44,8 @@ On a un dossier **assets** avec notamment :
 
     fonts/inter/inter-italic-var.woff2
     fonts/inter/inter-upright-var.woff2
+
+Qui est une typo plutôt sympa...
 
 On a un dossier **template-parts** qui contient : 
 

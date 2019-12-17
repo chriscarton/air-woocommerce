@@ -1,6 +1,6 @@
 <?php
-if ( have_posts() ) : 
-    while ( have_posts() ) : the_post();
+if (have_posts()) : 
+    while (have_posts()) : the_post();
         ?>
         <div class="the_post_thumbnail">
             <?php the_post_thumbnail(); ?>
@@ -13,6 +13,13 @@ if ( have_posts() ) :
         </div>
         <div>
             <?php the_author(); ?>
+        </div>
+        <div class="right-align">
+            <a 
+                href="<?php the_permalink() ?>"
+                class="waves-effect waves-light btn-small">
+                LIRE LA SUITE
+            </a>
         </div>
         <?php 
     endwhile; 

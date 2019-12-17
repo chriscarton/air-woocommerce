@@ -1,7 +1,28 @@
 <?php 
 
+    function debug($data){
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
+
+    function carton_register_style($file){
+        wp_register_style(
+            $file,
+            get_template_directory_uri().'/'.$file.'.css',
+            '',
+            1,
+            'all'
+        );
+        wp_enqueue_style($file);
+    }
+
     function load_stylesheets()
     {
+
+        carton_register_style('style');
+         carton_register_style('app');
+        /*
         wp_register_style(
             'stylesheet',
             get_template_directory_uri().'/style.css',
@@ -19,6 +40,7 @@
             'all'
         );
         wp_enqueue_style('custom');
+        */
 
     }
     add_action('wp_enqueue_scripts','load_stylesheets');
