@@ -16,6 +16,36 @@ Définir ces constantes pour **développer** avec plus de **sérénité** :
     define('WP_DEBUG', true);
     define('WP_CACHE', false);
 
+# Get Template Directory Uri
+
+Peut-être utile dans plein de cas de figure : 
+
+    <img src="<?= get_template_directory_uri() ?>/images/no-posts.png" alt="Mon image!">
+
+# Les catégories 
+
+Les catégories peuvent être un peu *tricky* à afficher parce que **celles qui sont vides n'apparaissent tout simplement pas**. Il faut utiliser le paramètre *hide_empty* :
+
+    //Comme ceci : 
+    wp_list_categories([
+        'hide_empty' => 0
+    ]);
+
+    //Ou comme ça
+    $categories = get_categories([
+        'hide_empty' => 0
+    ]);
+
+# Template Hierarchy 
+
+    //Pour l'instant j'ai ça : 
+    404.php
+    archive.php
+    category.php
+    front-page.php
+    single.php
+    search.php
+
 ## Chrome Dev Tools 
 
     F12 > Network > Disable Cache

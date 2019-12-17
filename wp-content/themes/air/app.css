@@ -201,3 +201,10 @@ body #Categories ul li a {
   font-family: monospace;
 }
 
+body #Footer {
+  background-color: #333333;
+  color: white;
+  min-height: 300px;
+  padding: 10px;
+}
+

@@ -21,7 +21,9 @@ get_header();
         get_template_part('parts/pagination'); 
         
     else:
-        echo '<p>no posts!</p>';
+        //echo '<p>no posts!</p>';
+        get_template_part('parts/no-posts');
+
     endif;
     ?>
 </div>

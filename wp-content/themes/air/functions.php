@@ -1,5 +1,7 @@
 <?php 
 
+    require_once('functions-admin.php');
+
     function debug($data){
         echo '<pre>';
         print_r($data);
