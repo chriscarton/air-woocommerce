@@ -132,6 +132,17 @@ body .post .read-next {
   font-weight: bold;
 }
 
+body .post-full {
+  border: 1px dashed violet;
+}
+
+body .post-full .post-full-infos {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  text-align: right;
+}
+
 body .pagination {
   text-align: center;
   padding: 20px;
@@ -189,6 +200,59 @@ body .category-template-header .the_category ul li a:hover {
   text-decoration: underline;
 }
 
+body .comments {
+  margin-top: 75px;
+  background-color: #68c8ff;
+  padding: 25px;
+}
+
+body .comments .comment-respond {
+  color: white;
+  background-color: #0093e8;
+  padding: 15px;
+}
+
+body .comments .comment-respond input,
+body .comments .comment-respond textarea {
+  display: block;
+  min-height: 35px;
+  padding: 3px;
+  border: 0px;
+}
+
+body .comments .comment-respond label {
+  font-weight: bold;
+}
+
+body .comments .comment-respond input[type=checkbox] {
+  display: inline;
+  min-height: auto;
+}
+
+body .comments .comment-respond input[type=submit] {
+  background-color: black;
+  padding: 15px;
+  color: white;
+  border: 0px;
+  font-family: monospace;
+}
+
+body .comments .single-comment {
+  border-radius: 5px;
+  padding: 15px;
+  background-color: white;
+  width: 75%;
+  margin-left: auto;
+  margin-right: 0px;
+  margin-top: 25px;
+}
+
+body .comments .single-comment .single-comment-infos {
+  font-size: 0.9rem;
+  text-align: right;
+  font-style: italic;
+}
+
 body #Categories {
   background-color: #e2e2e2;
   padding: 10px;
@@ -223,5 +287,9 @@ body #Footer .subsection-title {
 
 body #Footer a {
   color: white;
+}
+
+body #Footer a.category-link {
+  display: block;
 }
 

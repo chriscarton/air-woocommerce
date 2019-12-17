@@ -56,7 +56,6 @@ function air_custom_settings(){
     );
 }
 
-
 add_action('admin_menu','carton_add_admin_page');
 
 //Page générale (première page)

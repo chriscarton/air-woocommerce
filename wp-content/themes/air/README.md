@@ -22,6 +22,10 @@ Peut-être utile dans plein de cas de figure :
 
     <img src="<?= get_template_directory_uri() ?>/images/no-posts.png" alt="Mon image!">
 
+Mais aussi pour inclure des fichiers php : 
+
+    require_once(get_template_directory().'/admin/air-admin.php');
+
 # Les catégories 
 
 Les catégories peuvent être un peu *tricky* à afficher parce que **celles qui sont vides n'apparaissent tout simplement pas**. Il faut utiliser le paramètre *hide_empty* :
@@ -60,7 +64,8 @@ Voilà en gros comment récupérer et afficher des tags.
 
 # Template Hierarchy 
 
-    //Pour l'instant j'ai ça : 
+Pour l'instant j'ai ça : 
+
     404.php
     archive.php
     category.php
@@ -238,3 +243,11 @@ Voir pour des exemples plus détaillés :
 Using wp_reset_query() restores the WP_Query and global $post data to the original main query. You MUST use this function to reset your loop if you use query_posts() within your loop. You can use it after custom loops with WP_Query because it actually calls wp_reset_postdata() when it runs. However, it’s best practice to use wp_reset_postdata() with any custom loops involving WP_Query.
 
 <?php wp_reset_query(); ?>
+
+# Elementor 
+
+Oh, je sais qu'on va y venir. 
+
+    https://www.wpcrafter.com/make-wordpress-theme-compatible-elementor/
+
+Bon voilà c'est une vidéo à regarder *"How To Make Any WordPress Theme Compatible With Elementor"*. 

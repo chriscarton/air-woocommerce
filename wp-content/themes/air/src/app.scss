@@ -56,14 +56,12 @@ body{
         }
     }
 
-    
-
     @import '404.scss';
     @import 'menu.scss';
     @import 'post.scss';
     @import 'pagination.scss';
     @import 'category.scss';
-
+    @import 'comments.scss';
 
     #Categories{
         background-color:#e2e2e2;
@@ -96,6 +94,9 @@ body{
         }
         a{
             color:white;
+        }
+        a.category-link{
+            display:block;
         }
     }
 
