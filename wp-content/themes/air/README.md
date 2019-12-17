@@ -36,6 +36,28 @@ Les catégories peuvent être un peu *tricky* à afficher parce que **celles qui
         'hide_empty' => 0
     ]);
 
+C'est pareil avec **get_tags()** il faut passer hide_empty à 0. Mais on va y venir...
+
+# Récupérer des tags 
+
+Voilà en gros comment récupérer et afficher des tags. 
+
+    $all_tags = get_tags(['hide_empty' => 0]);        
+    if(!empty($all_tags)):
+        foreach($all_tags as $tag):
+            $url = get_tag_link($tag->term_id);
+            ?>
+            <a
+                class="tag-link" 
+                href="<?= $url ?>"
+            >
+                #<?= ucfirst($tag->name) ?>
+            </a>
+            &nbsp;
+            <?php
+        endforeach;
+    endif;
+
 # Template Hierarchy 
 
     //Pour l'instant j'ai ça : 

@@ -5,6 +5,12 @@
 # Source : 
 //https://www.youtube.com/watch?v=pTegcB9zMSM&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=5
 
+# Mais tout ça c'est vraiment tiré par les cheveux... 
+// Il y a beaucoup trop de répétitions... 
+// Est-ce que je pourrais faire une classe ? 
+// Est-ce qu'il y aurait des boiler-plates sur github ? 
+
+
 function carton_add_admin_page(){
     add_menu_page(
         'Air Theme Options',
