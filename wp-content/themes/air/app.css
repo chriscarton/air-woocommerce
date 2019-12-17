@@ -20,6 +20,7 @@ body a {
 
 body #Main {
   background-color: white;
+  position: relative;
   padding: 25px;
   min-height: 100vh;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.15);
@@ -307,6 +308,28 @@ body #searchResults .single-search-result .single-search-result-functions a.sing
   display: inline-block;
   font-family: monospace;
   text-decoration: none;
+}
+
+body #thePage {
+  background-color: white;
+  box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  min-height: 100vh;
+}
+
+body .search-icon-link {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 75px;
+  height: 75px;
+  background-color: #0c1549;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 body #Categories {

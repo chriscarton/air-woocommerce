@@ -1,65 +1,29 @@
 <?php get_header(); ?>
-
-<div class="row">
-    <main id="Main" class="col s12">
-        <?php get_template_part('parts/banner'); ?>
-        <div class="the_page">
-            <?php
-            require_once('inc/loop-basic.php'); 
+<main id="Main">
+    <?php get_template_part('parts/banner'); ?>
+    <?php get_template_part('parts/menu'); ?>
+    <?php
+        if (have_posts()) : 
+            while (have_posts()) : the_post();
             ?>
-        </div>
-
-        <h2>Et voici mes posts :</h2>
-        <?php 
-
-        
-
-        //$query = $queryBuilder->buildQuery()->getQuery();
-
-
-        /*
-        $CartonRequest->setArgs(['post_type'=>'post']);
-        $posts = $CartonRequest->getSomePosts();
-        
-        foreach($posts as $post):
-            //debug();
-            
-            debug($post);
-            ?>
-            <div class="post">
-                <h2>
-                    <?= $post['title']; ?>
+            <div id="thePage">
+                <div class="the_post_thumbnail">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+                <h2 class="the_title">
+                    <?php the_title(); ?>
                 </h2>
-                <div>
-                    <?= $post['content']; ?>
+                <div class="the_excerpt">
+                    <?php the_content(); ?>
                 </div>
-                <div>
-                    <?= $post['excerpt']; ?>
+                <div class="the_author">
+                    <?php the_author(); ?>
                 </div>
-                <hr>
-
-
-                <div class="right-align">
-                    <a 
-                        href="<?php the_permalink($post['id']) ?>"
-                        class="waves-effect waves-light btn-small">
-                        LIRE LA SUITE
-                    </a>
-                </div>
-
-                <br>
-                <?= $post['created']; ?>
             </div>
-            <?php
-
-            //Bon là j'ai bien post par post...
-            
-            //var_dump($post);
-        endforeach;
-        //print_r($posts);
-        */
-
+            <?php 
+            endwhile; 
+        endif;
         ?>
-    </main>
-</div>
+    <?php get_template_part('parts/footer'); ?>
+</main>
 <?php get_footer(); ?>

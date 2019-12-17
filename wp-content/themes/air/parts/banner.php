@@ -12,7 +12,9 @@
     //Attention ça c'est un lien en dur 
     //Mais il fonctionne...
     ?>
-    <a href="http://localhost/air-woocommerce/search-page/">
-        Loupiote!
+    <a 
+        class="search-icon-link"
+        href="http://localhost/air-woocommerce/search-page/">
+        <img src="<?php bloginfo('template_directory');?>/images/search.svg">
     </a>
 </header>
