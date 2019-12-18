@@ -57,6 +57,11 @@ body{
         }
     }
 
+    .lead{
+        font-size:1.7rem;
+        font-weight: bold;
+    }
+
     @import '404.scss';
     @import 'menu.scss';
     @import 'post.scss';

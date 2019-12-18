@@ -320,3 +320,15 @@ Il suffit de faire **ça** :
     set_query_var('query', $wp_query);
     get_template_part('parts/pagination');
 
+# Passage par référence (PHP)
+
+A cool trick : 
+
+    <?php
+    function foo(&$var) {
+        $var++;
+    }
+    $a=5;
+    foo ($a);
+    // $a vaut 6 maintenant
+    ?>
