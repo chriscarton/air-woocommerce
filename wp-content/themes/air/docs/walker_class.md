@@ -54,3 +54,30 @@ If yoou opt to extend the Walker class, you'll need to define all necessary prop
 Otherwise, if you choose to extend the concrete child class, you'll just need to define those methods whose output has to be changed. 
 
 Bon avec ça et des **frameworks JS/CSS** comme **Bootstrap**, **Foundation** ou **Materialize**, on peut créer des menus déroulants, responsives, mega...
+
+# Adding Fields to the WordPress Menu Items' Editing Box 
+
+Well, that's a title !
+
+The menu items are considered specific post types, and the values of the menu item's field are stored in the database as hidden custom fields. 
+
+We will : 
+
+    .Register a custom field for the navigation item
+    .Save the new custom field's value
+    .Set up a new Walker class for the edit menu tree
+
+###### Est-ce que ça va permettre à l'administrateur de choisir son Walker ? 
+Pour un menu par exemple ? 
+
+First, we'll have to register a new custom field for the navigation menu item in the *functions.php* file : 
+
+    Voir *sketch.php* (si je l'ai pas effacé depuis)
+
+Just copy and paste the full **Walker_Nav_Menu_Edit** code from the **Trac** into your custom class and add the custom field markup as shown below. 
+
+Mais ça c'est même pas encore le rendu. 
+
+Custom_Foundation_Nav_Menu
+
+The easiest way to proceed is to copy the code from the Walker_Nav_Menu class and paste it in our custom class. Editing it where necessary. 

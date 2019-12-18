@@ -1,18 +1,16 @@
 <nav id="Menu">
     <?php 
-        //Ah ça je peux rien en faire...
+        //Bon il faut déclarer le menu dans l'admin pour pouvoir utiliser cette fonction correctement
         wp_nav_menu([
-            'theme_location'=>'top-menu'
+            'theme_location'=>'top-menu',
+            'walker'=> new Custom_Walker_Nav_Menu(),
+            'container'=>false,
+            'items_wrap' => '%3$s'
         ]);
-        
         /*
-        $locations = get_nav_menu_locations();
-        debug($locations);
+        container et item_wrap servent à supprimer dans ce cas les conteneurs superflus
+        walker utilise une classe personnalisée pour parcourir les éléments... 
+        cette classe se trouve dans un dossier "walkers" du thème
         */
-        //$items = wp_get_nav_menu_items('top-menu');
-        //debug($items);
-
-        //WALKER CLASS ?
-        //https://www.smashingmagazine.com/2015/10/customize-tree-like-data-structures-wordpress-walker-class/
     ?>
 </nav>
