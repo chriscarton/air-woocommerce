@@ -14,3 +14,19 @@
         */
     ?>
 </nav>
+
+<script>
+    //alert('me');
+
+    var items = document.querySelectorAll('.menu-item');
+    
+    //console.log(levels);
+
+    items.forEach(function(item){
+        //console.log(level);
+        item.addEventListener('mouseover',function(e){
+            //Ouais bon je sais pas trop...
+        });
+    });
+
+</script>

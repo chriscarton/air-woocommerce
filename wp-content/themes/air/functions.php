@@ -2,66 +2,32 @@
 
 require_once('functions-admin.php');
 
-function debug($data){
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-}
+require_once('functions/debug.php');
 
-function carton_register_style($file){
-    wp_register_style(
-        $file,
-        get_template_directory_uri().'/'.$file.'.css',
-        '',
-        1,
-        'all'
-    );
-    wp_enqueue_style($file);
-}
+require_once('functions/CartonApp.php');
+require_once('functions/CPT.php');
 
-function load_stylesheets()
-{
+$people = new CPT([
+    'post_type_name' => 'person',
+    'singular' => 'Person',
+    'plural' => 'People',
+    'slug' => 'people'
+]);
 
-    carton_register_style('style');
-        carton_register_style('app');
-    /*
-    wp_register_style(
-        'stylesheet',
-        get_template_directory_uri().'/style.css',
-        '',
-        1,
-        'all'
-    );
-    wp_enqueue_style('stylesheet');
+$CartonApp = new CartonApp();
 
-    wp_register_style(
-        'custom',
-        get_template_directory_uri().'/app.css',
-        '',
-        1,
-        'all'
-    );
-    wp_enqueue_style('custom');
-    */
+$CartonApp->setStyles(['style','app']);
+$CartonApp->setScripts(['app']);
 
-}
-add_action('wp_enqueue_scripts','load_stylesheets');
-
-
-function load_javascript(){
-    wp_register_script(
-        'custom',
-        get_template_directory_uri().'/app.js',
-        'jquery',
-        1,
-        true
-    );
-    wp_enqueue_script('custom');
-}
-
-add_action('wp_enqueue_script','load_javascript');
-
-
+//Fuck yes
+# https://wordpress.stackexchange.com/questions/48085/add-action-reference-a-class/48094
+/*
+    Ça veut dire qu'on peut passer des instances de classe 
+    Et des méthodes à appeler 
+    À des hooks WordPress
+*/
+add_action('wp_enqueue_scripts',[$CartonApp,'loadStyles']);
+add_action('wp_enqueue_scripts',[$CartonApp,'loadScripts']);
 
 add_theme_support('menus');
 
@@ -74,7 +40,7 @@ add_theme_support('post-thumbnails');
 //Add image sizes
 add_image_size('post_image',1100,750,false);
 
-//Import des custom walkers...
 
+//Import des custom walkers...
 require_once('walkers/custom_walker_nav_menu.php');
 ?>
