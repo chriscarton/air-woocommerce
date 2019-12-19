@@ -2,8 +2,8 @@
 <main id="Main">
     <?php 
     get_template_part('parts/banner'); 
-    get_template_part('parts/menu');
-    get_template_part('parts/categories-list');
+    get_template_part('parts/menu'); 
+    get_template_part('parts/categories-list'); 
     ?>
     <div class="the_page">
         <?php
@@ -19,7 +19,6 @@
         $queryBuilder->buildQuery();
         $query = $queryBuilder->getQuery();
 
-        
         if ($query->have_posts()) : 
             while ($query->have_posts() ) : $query->the_post();
                 get_template_part('parts/post');
@@ -30,9 +29,13 @@
         else:
             echo '<p>no posts!</p>';
         endif;
+
+        wp_reset_query();
         ?>
     </div>
+    
     <?php 
+        get_template_part('parts/services');
         get_template_part('parts/footer');
     ?>
 </main>

@@ -1,0 +1,158 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-12-19 12:35+0100\n"
+"PO-Revision-Date: 2019-12-19 13:07+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ../functions\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: CPT.php\n"
+
+#: CPT.php:327 CPT.php:328 CPT.php:329 CPT.php:330 CPT.php:404 CPT.php:405
+#: CPT.php:406 CPT.php:506
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: CPT.php:331
+msgid "Add New"
+msgstr "Ajouter nouveau"
+
+#: CPT.php:332 CPT.php:411
+#, php-format
+msgid "Add New %s"
+msgstr "Ajouter nouveau %s"
+
+#: CPT.php:333 CPT.php:408
+#, php-format
+msgid "Edit %s"
+msgstr "Éditer %s"
+
+#: CPT.php:334
+#, php-format
+msgid "New %s"
+msgstr "Nouveau %s"
+
+#: CPT.php:335 CPT.php:409
+#, php-format
+msgid "View %s"
+msgstr "Voir %s"
+
+#: CPT.php:336 CPT.php:415
+#, php-format
+msgid "Search %s"
+msgstr "Rechercher %s"
+
+#: CPT.php:337 CPT.php:420
+#, php-format
+msgid "No %s found"
+msgstr "%s non trouvé"
+
+#: CPT.php:338
+#, php-format
+msgid "No %s found in Trash"
+msgstr "%s non trouvé dans corbeille"
+
+#: CPT.php:339 CPT.php:414
+#, php-format
+msgid "Parent %s:"
+msgstr "%s Parent:"
+
+#: CPT.php:407
+#, php-format
+msgid "All %s"
+msgstr "Tous les %s"
+
+#: CPT.php:410
+#, php-format
+msgid "Update %s"
+msgstr "Mise à jour de %s"
+
+#: CPT.php:412
+#, php-format
+msgid "New %s Name"
+msgstr "Nouveau %s nom"
+
+#: CPT.php:413
+#, php-format
+msgid "Parent %s"
+msgstr "Parent %s"
+
+#: CPT.php:416
+#, php-format
+msgid "Popular %s"
+msgstr "%s populaires"
+
+#: CPT.php:417
+#, php-format
+msgid "Seperate %s with commas"
+msgstr "Séparer %s par des virgules"
+
+#: CPT.php:418
+#, php-format
+msgid "Add or remove %s"
+msgstr "Ajouter ou supprimer %s"
+
+#: CPT.php:419
+#, php-format
+msgid "Choose from most used %s"
+msgstr "Choisir parmi les %s les plus utilisés"
+
+#: CPT.php:559
+#, php-format
+msgid "No %s"
+msgstr "Pas de %s"
+
+#: CPT.php:645
+#, php-format
+msgid "Show all %s"
+msgstr "Voir tous les %s"
+
+#: CPT.php:816 CPT.php:819 CPT.php:821
+#, php-format
+msgid "%s updated."
+msgstr "%s mis à jour."
+
+#: CPT.php:817
+msgid "Custom field updated."
+msgstr "Champ personnalisé mis à jour."
+
+#: CPT.php:818
+msgid "Custom field deleted."
+msgstr "Champ personnalisé supprimé."
+
+#: CPT.php:820
+#, php-format
+msgid "%2$s restored to revision from %1$s"
+msgstr "%2$s restauré en révision depuis %1$s"
+
+#: CPT.php:822
+#, php-format
+msgid "%s saved."
+msgstr "%s sauvegardé."
+
+#: CPT.php:823
+#, php-format
+msgid "%s submitted."
+msgstr "%s soumis."
+
+#: CPT.php:825
+#, php-format
+msgid "%2$s scheduled for: <strong>%1$s</strong>."
+msgstr "%2$s planifié pour: <strong>%1$s</strong>."
+
+#: CPT.php:826
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: CPT.php:829
+#, php-format
+msgid "%s draft updated."
+msgstr "%s brouillon mis à jour."

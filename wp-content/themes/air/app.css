@@ -315,6 +315,57 @@ body #searchResults .single-search-result .single-search-result-functions a.sing
   text-decoration: none;
 }
 
+body #Footer {
+  background-color: #333333;
+  color: white;
+  min-height: 300px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+body #Footer .subsection-title {
+  padding: 15px;
+  border-bottom: 5px solid white;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+body #Footer a {
+  color: white;
+}
+
+body #Footer a.category-link {
+  display: block;
+}
+
+body #Services {
+  background-color: pink;
+  min-height: 300px;
+  padding: 10px;
+}
+
+body #Services .inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+body #Services .item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+body #Services .item h2 {
+  color: pink;
+  text-align: center;
+}
+
 body #thePage {
   background-color: white;
   box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.15);
@@ -347,33 +398,5 @@ body #Categories {
 
 body #Categories ul li a {
   font-family: monospace;
-}
-
-body #Footer {
-  background-color: #333333;
-  color: white;
-  min-height: 300px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px;
-}
-
-body #Footer .subsection-title {
-  padding: 15px;
-  border-bottom: 5px solid white;
-  margin-bottom: 15px;
-  text-align: center;
-  font-family: monospace;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-body #Footer a {
-  color: white;
-}
-
-body #Footer a.category-link {
-  display: block;
 }
 

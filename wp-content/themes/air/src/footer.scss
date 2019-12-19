@@ -1,0 +1,25 @@
+#Footer{
+    background-color:#333333;
+    color:white;
+    min-height:300px;
+    padding:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:15px;
+    //column-count: 3;
+    .subsection-title{
+        padding:15px;
+        border-bottom:5px solid white;
+        margin-bottom:15px;
+        text-align: center;
+        font-family: monospace;
+        letter-spacing:2px;
+        text-transform: uppercase;
+    }
+    a{
+        color:white;
+    }
+    a.category-link{
+        display:block;
+    }
+}
