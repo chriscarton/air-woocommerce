@@ -366,6 +366,18 @@ body #Services .item h2 {
   text-align: center;
 }
 
+body .products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  border: 1px dashed black;
+}
+
+body .products .product {
+  border: 1px dashed blue;
+}
+
 body #thePage {
   background-color: white;
   box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.15);

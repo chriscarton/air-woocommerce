@@ -3,34 +3,15 @@
     <?php 
     get_template_part('parts/banner'); 
     get_template_part('parts/menu'); 
-    get_template_part('parts/categories-list'); 
+    
+    //Ça ça marche mais il faudrait le refaire avec un walker perso
+    //get_template_part('parts/categories-list'); 
     ?>
     <div class="the_page">
         <?php
-        require_once('QueryBuilder/CartonQueryBuilder.php');
-        $queryBuilder = new CartonQueryBuilder();
         
-        $queryBuilder->setArgs([
-            'p'=>null,
-            'post_type'=>'post',
-            'post_status'=>'publish',
-        ]);
-        
-        $queryBuilder->buildQuery();
-        $query = $queryBuilder->getQuery();
-
-        if ($query->have_posts()) : 
-            while ($query->have_posts() ) : $query->the_post();
-                get_template_part('parts/post');
-            endwhile; 
-            set_query_var('query',$query);
-            get_template_part('parts/pagination'); 
-            
-        else:
-            echo '<p>no posts!</p>';
-        endif;
-
-        wp_reset_query();
+        get_template_part('loops/all_products');
+        //get_template_part('loops/all_posts');
         ?>
     </div>
     

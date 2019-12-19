@@ -9,6 +9,8 @@ require_once('functions/CartonApp.php');
 require_once('functions/CPT.php');
 require_once('functions/cpts.php');
 
+require_once('QueryBuilder/CartonQueryBuilder.php');
+
 $CartonApp = new CartonApp();
 
 $CartonApp->setStyles(['style','app']);
